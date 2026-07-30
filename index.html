@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a0a">
+<title>Secret Campetz</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --fg: #f5f5f5;
+    --muted: #9a9a9a;
+    --accent: #f5f5f5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100dvh;
+    padding: 56px 24px 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .logo {
+    max-width: min(280px, 60vw);
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+
+  /* Fallback wordmark, shown only if logo.png is missing */
+  .logo-fallback {
+    font-size: clamp(28px, 6vw, 44px);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    color: var(--fg);
+    text-transform: uppercase;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--fg);
+  }
+
+  a:focus-visible {
+    outline: 1px solid var(--fg);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    a { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <!--
+    Sostituisci "logo.png" con il file del tuo logo (stessa cartella).
+    Se il file non è ancora pronto, resta visibile la scritta di fallback qui sotto.
+  -->
+  <img
+    class="logo"
+    src="logo.png"
+    alt="Secret Campetz"
+    onerror="this.style.display='none'; document.getElementById('fallback').style.display='block';"
+  >
+  <div class="logo-fallback" id="fallback" style="display:none;">Secret Campetz</div>
+
+  <div class="links">
+    <a href="https://instagram.com/secretcampetz" target="_blank" rel="noopener">@secretcampetz</a>
+    <a href="mailto:secretcampetz@gmail.com">secretcampetz@gmail.com</a>
+  </div>
+
+</body>
+</html>
